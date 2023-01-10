@@ -4,7 +4,8 @@
     {
         public function get_menu()
         {
-            # code...
+            $this->db->where('status', 'tampil');
+            return $this->db->get('data_menu')->result();
         }
     }
     

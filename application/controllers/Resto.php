@@ -4,10 +4,11 @@
     {
         public function index()
         {
-            $data['title'] = "Dashboard";
-            $this->load->view('templates/header', $data);
+            $title['title'] = "Dashboard";
+            $data['menu'] = $this->m_resto->get_menu();
+            $this->load->view('templates/header', $title);
             $this->load->view('templates/navbar_kasir');
-            $this->load->view('transaksi/dashboard');
+            $this->load->view('transaksi/dashboard', $data);
             $this->load->view('templates/footer');
         }
     }
