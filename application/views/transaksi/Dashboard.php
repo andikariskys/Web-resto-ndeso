@@ -8,24 +8,69 @@
         var total = 0;
     </script>
 
-    <div class="row">
-
-    <?php foreach ($menu as $mn) : ?>
-
-        <div class="card m-2" style="width: 16rem; height: 23rem;">
-            <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
-            <div class="card-body">
-                <h5 class="card-title"><?= $mn->nama_menu ?></h5>
-                <p class="card-text">
-                    <b>Rp. <?= $mn->harga_satuan ?></b><br>
-                    <i>Stok: <b><?= $mn->stok ?></b></i><br>
-                </p>
-                <small>Masukkan jumlah pesanan</small>
-                <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+        <fieldset>
+            <legend>Makanan</legend>
+            <div class="row">
+                <?php foreach ($menu as $mn) : 
+                    if ($mn->kategori == "Makanan") { ?>
+                        <div class="card m-2" style="width: 16rem; height: 23rem;">
+                            <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $mn->nama_menu ?></h5>
+                                <p class="card-text">
+                                    <b>Rp. <?= $mn->harga_satuan ?></b><br>
+                                    <i>Stok: <b><?= $mn->stok ?></b></i><br>
+                                </p>
+                                <small>Masukkan jumlah pesanan</small>
+                                <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                            </div>
+                        </div>
+                    <?php } ?>
+                <?php endforeach; ?>
             </div>
-        </div>
-
-        <?php endforeach; ?>
+        </fieldset>
+        <fieldset>
+            <legend>Minuman</legend>
+            <div class="row">
+                <?php foreach ($menu as $mn) : 
+                    if ($mn->kategori == "Minuman") { ?>
+                        <div class="card m-2" style="width: 16rem; height: 23rem;">
+                            <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $mn->nama_menu ?></h5>
+                                <p class="card-text">
+                                    <b>Rp. <?= $mn->harga_satuan ?></b><br>
+                                    <i>Stok: <b><?= $mn->stok ?></b></i><br>
+                                </p>
+                                <small>Masukkan jumlah pesanan</small>
+                                <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                            </div>
+                        </div>
+                    <?php } ?>
+                <?php endforeach; ?>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Snack</legend>
+            <div class="row">
+                <?php foreach ($menu as $mn) : 
+                    if ($mn->kategori == "Snack") { ?>
+                        <div class="card m-2" style="width: 16rem; height: 23rem;">
+                            <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $mn->nama_menu ?></h5>
+                                <p class="card-text">
+                                    <b>Rp. <?= $mn->harga_satuan ?></b><br>
+                                    <i>Stok: <b><?= $mn->stok ?></b></i><br>
+                                </p>
+                                <small>Masukkan jumlah pesanan</small>
+                                <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                            </div>
+                        </div>
+                    <?php } ?>
+                <?php endforeach; ?>
+            </div>
+        </fieldset>
 </form>
 
 <script>
