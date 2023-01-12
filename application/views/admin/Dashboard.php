@@ -31,8 +31,8 @@
                 <td><?= $mn->harga_satuan ?></td>
                 <td class="text-info"><?= $mn->status ?></td>
                 <td>
-                    <a href="#" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;
-                    <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                    <a href="<?= base_url('admin/edit_menu/'.$mn->id_menu) ?>" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;
+                    <a href="<?= base_url('admin/delete_menu/'.$mn->id_menu) ?>" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
                 </td>
             </tr>
 
