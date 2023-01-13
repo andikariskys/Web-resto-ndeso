@@ -36,6 +36,28 @@
             $this->db->where('id_menu', $id_menu);
             $this->db->delete('data_menu');
         }
+
+        public function cek_status($id_menu)
+        {
+            $this->db->where('id_menu', $id_menu);
+            $this->db->select('status');
+            $status = $this->db->get('data_menu')->result();
+
+            return $status[0]->status;
+        }
+
+        public function ubah_status($id_menu, $status)
+        {
+            $this->db->where('id_menu', $id_menu);
+            $this->db->update('data_menu', array('status' => $status));
+        }
+
+        public function users()
+        {
+            $this->db->where('role_id', 2);
+            $this->db->or_where('role_id', 3);
+            return $this->db->get('data_users')->result();
+        }
     }
     
 

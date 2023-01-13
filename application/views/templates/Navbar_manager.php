@@ -10,7 +10,10 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="<?= base_url('admin') ?>" class="nav-link">Data Menu</a>
+                        <a href="<?= base_url('manager') ?>" class="nav-link">Data Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('manager/data_user') ?>" class="nav-link">Data User</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Riwayat Transaksi</a>

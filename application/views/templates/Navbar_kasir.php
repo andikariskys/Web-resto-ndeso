@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Dashboard</a>
+                        <a href="<?= base_url('resto') ?>" class="nav-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Riwayat Transaksi</a>
