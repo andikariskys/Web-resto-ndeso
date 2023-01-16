@@ -58,6 +58,23 @@
             $this->db->or_where('role_id', 3);
             return $this->db->get('data_users')->result();
         }
+
+        public function reset_password($id_user, $data)
+        {
+            $this->db->where('id_user', $id_user);
+            $this->db->update('data_users', $data);
+        }
+
+        public function simpan_user($nama, $username, $role_id)
+        {
+            $this->db->query("INSERT INTO data_users VALUES(uuid(), '$username', NULL, '$nama', $role_id)");
+        }
+
+        public function hapus_user($id_user)
+        {
+            $this->db->where('id_user', $id_user);
+            $this->db->delete('data_users');
+        }
     }
     
 

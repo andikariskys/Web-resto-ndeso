@@ -85,6 +85,29 @@
             $this->load->view('manager/data_users', $data);
             $this->load->view('templates/footer');
         }
+
+        public function reset_pass($id_user)
+        {
+            $data = array('password' => null );
+
+            $this->m_resto->reset_password($id_user, $data);
+            redirect('manager/data_user');
+        }
+
+        public function save_user()
+        {
+            $nama       = $this->input->post('nama');
+            $username   = $this->input->post('username');
+            $role_id    = $this->input->post('role_id');
+
+            $this->m_resto->simpan_user($nama, $username, $role_id);
+            redirect('manager/data_user');
+        }
+
+        public function delete_user($id_user)
+        {
+            $this->m_resto->hapus_user($id_user);
+        }
     }
     
 
