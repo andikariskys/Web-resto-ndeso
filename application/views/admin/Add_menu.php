@@ -1,18 +1,18 @@
-<center><h1 class="m-2">Tambah Menu</h1></center>
+<center><h1 class="m-2 text-white">Tambah Menu</h1></center>
 
 <center class="m-5">
     <form action="<?= base_url('admin/save_menu') ?>" method="post" enctype="multipart/form-data">
         <table border="0" style="width: 100%; max-width: 900px;">
             <tr>
-                <th>Gambar</th>
+                <th class="text-white">Gambar</th>
                 <td><input type="file" name="gambar" class="form-control mt-2" accept="image/*" required></td>
             </tr>
             <tr>
-                <th>Nama Menu</th>
+                <th class="text-white">Nama Menu</th>
                 <td><input type="text" name="nama_menu" class="form-control mt-2" required></td>
             </tr>
             <tr>
-                <th>Kategori</th>
+                <th class="text-white">Kategori</th>
                 <td>
                     <select name="kategori" class="form-select mt-2" required>
                         <option value="" hidden selected>-- Pilih Kategori --</option>
@@ -23,11 +23,11 @@
                 </td>
             </tr>
             <tr>
-                <th>Jumlah Stok</th>
+                <th class="text-white">Jumlah Stok</th>
                 <td><input type="number" name="stok" class="form-control mt-2" required></td>
             </tr>
             <tr>
-                <th>Harga Satuan</th>
+                <th class="text-white">Harga Satuan</th>
                 <td><input type="number" name="harga_satuan" class="form-control mt-2" required></td>
             </tr>
             <tr>

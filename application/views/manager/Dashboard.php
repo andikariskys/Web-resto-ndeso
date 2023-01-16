@@ -1,4 +1,4 @@
-<center><h1 class="m-2">Daftar Menu</h1></center>
+<center><h1 class="m-2 text-white">Daftar Menu</h1></center>
 <div class="container-fluid">
     <table class="table table-stripped table-dark table-hover">
         <thead>

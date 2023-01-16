@@ -108,6 +108,23 @@
         {
             $this->m_resto->hapus_user($id_user);
         }
+
+        public function save_edit_user()
+        {
+            $id_user    = $this->input->post('id_user');
+            $nama       = $this->input->post('nama');
+            $username   = $this->input->post('username');
+            $role_id    = $this->input->post('role_id');
+
+            $data = array(
+                'nama'      => $nama,
+                'username'  => $username,
+                'role_id'   => $role_id
+            );
+
+            $this->m_resto->simpan_edit_user($id_user, $data);
+            redirect('manager/data_user');
+        }
     }
     
 

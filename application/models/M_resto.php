@@ -75,6 +75,12 @@
             $this->db->where('id_user', $id_user);
             $this->db->delete('data_users');
         }
+
+        public function simpan_edit_user($id_user, $data)
+        {
+            $this->db->where('id_user', $id_user);
+            $this->db->update('data_users', $data);
+        }
     }
     
 

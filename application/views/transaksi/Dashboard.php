@@ -1,4 +1,4 @@
-<center><h1>Resto Ndeso</h1></center>
+<center><h1 class="text-white">Resto Ndeso</h1></center>
 <form action="" method="post">
     <div class="position-relative d-none" id="hiddenButton">
         <button class="btn btn-outline-success position-fixed  top-2 end-0 m-3 btn-lg"><i class="fas fa-shopping-cart"></i></button>
@@ -9,7 +9,7 @@
     </script>
 
         <fieldset>
-            <legend>Makanan</legend>
+            <legend class="text-white">Makanan</legend>
             <div class="row">
                 <?php foreach ($menu as $mn) : 
                     if ($mn->kategori == "Makanan") { ?>
@@ -30,7 +30,7 @@
             </div>
         </fieldset>
         <fieldset>
-            <legend>Minuman</legend>
+            <legend class="text-white">Minuman</legend>
             <div class="row">
                 <?php foreach ($menu as $mn) : 
                     if ($mn->kategori == "Minuman") { ?>
@@ -51,7 +51,7 @@
             </div>
         </fieldset>
         <fieldset>
-            <legend>Snack</legend>
+            <legend class="text-white">Snack</legend>
             <div class="row">
                 <?php foreach ($menu as $mn) : 
                     if ($mn->kategori == "Snack") { ?>

@@ -1,8 +1,8 @@
-<center><h1 class="mt-2">Data Users</h1></center>
+<center><h1 class="mt-2 text-white">Data Users</h1></center>
 
 <button class="btn btn-outline-dark m-2" data-bs-target="#addUser" data-bs-toggle="modal">Tambah User</button>
 
-<table class="table table-stripped table-hover">
+<table class="table table-stripped table-hover text-white">
     <thead>
         <tr>
             <th>No</th>
@@ -47,7 +47,7 @@
                         <h1 class="modal-title fs-5" id="modaljudul">Edit User</h1>
                         <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                     </div>
-                    <form action="#" method="post">
+                    <form action="<?= base_url('manager/save_edit_user') ?>" method="post">
                         <input type="hidden" name="id_user" value="<?= $usr->id_user ?>">
                         <div class="modal-body">
                             <table border="0" style="width: 100%;">

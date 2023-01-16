@@ -1,4 +1,4 @@
-<center><h1 class="m-2">Daftar Menu</h1></center>
+<center><h1 class="m-2 text-white">Daftar Menu</h1></center>
 <a href="<?= base_url('admin/add_menu') ?>" class="btn btn-primary m-2 text-white">Tambah data</a>
 <div class="container-fluid">
     <table class="table table-stripped table-dark table-hover">
