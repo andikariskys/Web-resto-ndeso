@@ -7,15 +7,12 @@
                     <center><p class="display-6"><b><i>Reset Password</i></b></p></center>
                     <h5 class="mt-3">Username</h5>
                     <input type="text" name="username" class="form-control">
-                    <h5 class="mt-3">Nama Lengkap</h5>
-                    <input type="text" name="nama" class="form-control">
-                    <h5 class="mt-3">Password yang baru</h5>
-                    <input type="text" name="password" class="form-control">
+                    <h5 class="mt-3">Kode Reset</h5>
+                    <input type="number" name="kode" class="form-control" min="0">
                     <br>
-                    <p class="text-danger">Note: Jika username dan nama lengkap benar, maka password akan diubah sesuai dengan yang dimasukkan</p>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Reset</button>
                 </form>
-                <center><p class="mt-3">klik <a href="#">Disini</a> untuk kembali/login</p></center>
+                <center><p class="mt-3">klik <a href="<?= base_url('') ?>">Disini</a> untuk kembali/login</p></center>
             </div>
         </div>
     </div>

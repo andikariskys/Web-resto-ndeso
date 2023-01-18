@@ -2,6 +2,16 @@
 
     class Manager extends CI_Controller
     {
+        public function __construct()
+        {
+            parent::__construct();
+            $data_sess = $this->session->userdata('data_sess');
+
+            if ($data_sess['role_id'] != 0) {
+                redirect('login');
+            }
+        }
+
         public function index()
         {
             $title['title'] = "Daftar Menu";
@@ -88,10 +98,14 @@
 
         public function reset_pass($id_user)
         {
-            $data = array('password' => null );
+            $kode_reset = rand(10001, 99999);
+            $data = array(
+                'password' => null,
+                'null_password' => $kode_reset
+            );
 
             $this->m_resto->reset_password($id_user, $data);
-            redirect('manager/data_user');
+            echo "<script>alert('Kode password reset: ".$kode_reset."'); window.location.href='../data_user'</script>";
         }
 
         public function save_user()

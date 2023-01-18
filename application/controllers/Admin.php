@@ -2,6 +2,16 @@
 
     class Admin extends CI_Controller
     {
+        public function __construct()
+        {
+            parent::__construct();
+            $data_sess = $this->session->userdata('data_sess');
+
+            if ($data_sess['role_id'] != 1) {
+                redirect('login');
+            }
+        }
+
         public function index()
         {
             $title['title'] = "Daftar Menu";

@@ -81,6 +81,13 @@
             $this->db->where('id_user', $id_user);
             $this->db->update('data_users', $data);
         }
+
+        public function cek_login($username, $password)
+        {
+            $this->db->where('username', $username);
+            $this->db->where('password', $password);
+            return $this->db->get('data_users');
+        }
     }
     
 

@@ -6,8 +6,40 @@
         {
             $title['title'] = "Login";
             $this->load->view('templates/header', $title);
-            $this->load->view('login');
+            $this->load->view('login_view');
             $this->load->view('templates/footer');
+        }
+
+        public function login()
+        {
+            $username   = $this->input->post('username');
+            $pass       = $this->input->post('password');
+
+            $password = md5($pass);
+
+            $data = $this->m_resto->cek_login($username, $password);
+
+            if ($data->num_rows() > 0) {
+                $d_login = $data->result();
+
+                $data_user = array(
+                    'id_user' => $d_login[0]->id_user,
+                    'role_id' => $d_login[0]->role_id
+                );
+                $this->session->set_userdata('data_sess', $data_user);
+
+                if ($d_login[0]->role_id == 0) {
+                    redirect('manager');
+                } else if ($d_login[0]->role_id == 1) {
+                    redirect('admin');
+                } else {
+                    redirect('resto');
+                }
+
+            } else {
+                echo "<script>alert('Username dan atau password salah'); window.location.href='../'</script>";
+            }
+            
         }
 
         public function reset_pass()
