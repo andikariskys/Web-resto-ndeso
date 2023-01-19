@@ -65,9 +65,9 @@
             $this->db->update('data_users', $data);
         }
 
-        public function simpan_user($nama, $username, $role_id)
+        public function simpan_user($nama, $username, $role_id, $kode_reset)
         {
-            $this->db->query("INSERT INTO data_users VALUES(uuid(), '$username', NULL, '$nama', $role_id)");
+            $this->db->query("INSERT INTO data_users VALUES(uuid(), '$username', NULL, '$nama', $role_id, $kode_reset)");
         }
 
         public function hapus_user($id_user)
@@ -86,6 +86,14 @@
         {
             $this->db->where('username', $username);
             $this->db->where('password', $password);
+            return $this->db->get('data_users');
+        }
+
+        public function cek_kode($username, $kode)
+        {
+            $this->db->where('username', $username);
+            $this->db->where('null_password', $kode);
+
             return $this->db->get('data_users');
         }
     }

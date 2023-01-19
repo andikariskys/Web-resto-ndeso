@@ -49,6 +49,40 @@
             $this->load->view('reset_password');
             $this->load->view('templates/footer');
         }
+
+        public function check_reset()
+        {
+            $username   = $this->input->post('username');
+            $kode       = $this->input->post('kode');
+            $new_pass   = $this->input->post('new_password');
+
+            $check_code = $this->m_resto->cek_kode($username, $kode);
+
+            if ($check_code->num_rows() > 0) {
+                $data_user = $check_code->result();
+
+                $id_user = $data_user[0]->id_user;
+                $pass_user = md5($new_pass);
+
+                $data_pass = array(
+                    'password'      => $pass_user,
+                    'null_password' => null
+                );
+
+                $this->m_resto->simpan_pass_baru($id_user, $data_pass);
+
+                echo "<script>alert('Password berhasil diubah, silakan login kembali.'); window.location.href='../'</script>";
+            } else {
+                echo "<script>alert('Username dan atau kode yang Anda masukkan salah'); window.location.href = '../login/reset_pass'</script>";
+            }
+            
+        }
+
+        public function logout()
+        {
+            $this->session->sess_destroy();
+            redirect('');
+        }
     }
 
 

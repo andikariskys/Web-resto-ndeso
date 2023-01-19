@@ -113,9 +113,10 @@
             $nama       = $this->input->post('nama');
             $username   = $this->input->post('username');
             $role_id    = $this->input->post('role_id');
+            $kode_reset = rand(10001, 99999);
 
-            $this->m_resto->simpan_user($nama, $username, $role_id);
-            redirect('manager/data_user');
+            $this->m_resto->simpan_user($nama, $username, $role_id, $kode_reset);
+            echo "<script>alert('Kode password reset: ".$kode_reset."'); window.location.href='../data_user'</script>";
         }
 
         public function delete_user($id_user)

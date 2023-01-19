@@ -19,7 +19,10 @@
                         <a href="#" class="nav-link">Riwayat Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Logout</a>
+                        <a href="#" class="nav-link">Laporan Penjualan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('login/logout') ?>" class="nav-link">Logout</a>
                     </li>
                 </ul>
             </div>
