@@ -6,9 +6,9 @@
                 <form action="<?= base_url('login/login') ?>" method="post">
                     <center><p class="display-6"><b><i>Login</i></b></p></center>
                     <h4 class="mt-3">Username</h4>
-                    <input type="text" name="username" class="form-control">
+                    <input type="text" name="username" class="form-control" autocomplete="off" required>
                     <h4 class="mt-3">Password</h4>
-                    <input type="password" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control" required>
                     <br>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
                 </form>

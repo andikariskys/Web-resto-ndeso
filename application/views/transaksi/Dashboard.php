@@ -1,5 +1,5 @@
 <center><h1 class="text-white">Resto Ndeso</h1></center>
-<form action="" method="post">
+<form action="<?= base_url('resto/confirm_order') ?>" method="post">
     <div class="position-relative d-none" id="hiddenButton">
         <button class="btn btn-outline-success position-fixed  top-2 end-0 m-3 btn-lg"><i class="fas fa-shopping-cart"></i></button>
     </div>
@@ -23,6 +23,9 @@
                                 </p>
                                 <small>Masukkan jumlah pesanan</small>
                                 <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                                <input type="hidden" name="id_menu[]" value="<?= $mn->id_menu ?>">
+                                <input type="hidden" name="nama_menu[]" value="<?= $mn->nama_menu ?>">
+                                <input type="hidden" name="harga_menu[]" value="<?= $mn->harga_satuan ?>">
                             </div>
                         </div>
                     <?php } ?>
@@ -44,6 +47,9 @@
                                 </p>
                                 <small>Masukkan jumlah pesanan</small>
                                 <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                                <input type="hidden" name="id_menu[]" value="<?= $mn->id_menu ?>">
+                                <input type="hidden" name="nama_menu[]" value="<?= $mn->nama_menu ?>">
+                                <input type="hidden" name="harga_menu[]" value="<?= $mn->harga_satuan ?>">
                             </div>
                         </div>
                     <?php } ?>
@@ -65,6 +71,9 @@
                                 </p>
                                 <small>Masukkan jumlah pesanan</small>
                                 <input type="number" name="jumlah[]" class="form-control" min="0" max="<?= $mn->stok ?>" value="0" id="jml">
+                                <input type="hidden" name="id_menu[]" value="<?= $mn->id_menu ?>">
+                                <input type="hidden" name="nama_menu[]" value="<?= $mn->nama_menu ?>">
+                                <input type="hidden" name="harga_menu[]" value="<?= $mn->harga_satuan ?>">
                             </div>
                         </div>
                     <?php } ?>
@@ -85,7 +94,7 @@
     }
 
     for(var i = 0; i < jmlArray.length; i++) {
-        jmlArray[i].addEventListener('change', () => {
+        jmlArray[i].addEventListener('input', () => {
             const jmlArr = document.querySelectorAll("[class = 'form-control']");
             total = 0;
             for(var j = 0; j < jmlArr.length; j++) {

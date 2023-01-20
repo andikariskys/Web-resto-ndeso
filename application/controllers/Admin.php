@@ -46,13 +46,16 @@
                 $foto = $this->upload->data('file_name');
             }
 
+            $rand_id = rand(100001, 999999);
+
+            $id_menu        = "mn" + $rand_id;
             $nama_menu      = $this->input->post('nama_menu');
             $kategori       = $this->input->post('kategori');
             $stok           = $this->input->post('stok');
             $harga_satuan   = $this->input->post('harga_satuan');
 
             $data_menu = array(
-                'id_menu'       => null,
+                'id_menu'       => $id_menu,
                 'nama_menu'     => $nama_menu,
                 'kategori'      => $kategori,
                 'stok'          => $stok,

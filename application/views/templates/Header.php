@@ -10,4 +10,4 @@
     <script src="<?= base_url('assets/fontawesome/js/solid.js') ?>"></script>
     <script src="<?= base_url('assets/fontawesome/js/fontawesome.js') ?>"></script>
 </head>
-<body style="background-image: url('<?= base_url('assets/images/bg-image.jpg') ?>'); background-repeat: no-repeat; background-size: cover;">
+<body style="background-image: url('<?= base_url('assets/images/bg-image.jpg') ?>');  background-size: cover;">

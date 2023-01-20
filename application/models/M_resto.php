@@ -96,6 +96,16 @@
 
             return $this->db->get('data_users');
         }
+
+        public function simpan_tr_detail($data)
+        {
+            $this->db->insert('transaksi_detail', $data);
+        }
+
+        public function simpan_transaksi($data_transaksi)
+        {
+            $this->db->insert('transaksi', $data_transaksi);
+        }
     }
     
 
