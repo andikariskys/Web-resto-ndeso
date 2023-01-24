@@ -73,6 +73,11 @@
             $no_array = 0;
 
             foreach ($id_menu as $id) {
+                $stok_menu = $this->m_resto->get_stok($id_menu[$no_array]);
+                $stok = (int) $stok_menu->stok - (int) $jml_menu[$no_array];
+
+                $this->m_resto->update_stok($id_menu[$no_array], $stok);
+
                 $data = array(
                     'id_detail'     => null, 
                     'id_transaksi'  => $id_transaksi,
@@ -99,6 +104,27 @@
             $this->m_resto->simpan_transaksi($data_transaksi);
 
             redirect('resto');
+        }
+
+        public function histories_transaction()
+        {
+            $data_sess = $this->session->userdata('data_sess');
+
+            $data['riwayat'] = $this->m_resto->get_riwayat_user($data_sess['id_user']);
+
+            $title['title'] = "Riwayat Transaksi";
+            $this->load->view('templates/header', $title);
+            $this->load->view('templates/navbar_kasir');
+            $this->load->view('transaksi/history', $data);
+            $this->load->view('templates/footer');
+        }
+
+        public function print($id_transaksi)
+        {
+            $data['transaksi']          = $this->m_resto->get_transaksi_id($id_transaksi);
+            $data['transaksi_detail']   = $this->m_resto->get_detail_id($id_transaksi);
+
+            $this->load->view('transaksi/print_struk', $data);
         }
     }
     

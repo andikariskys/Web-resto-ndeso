@@ -106,6 +106,44 @@
         {
             $this->db->insert('transaksi', $data_transaksi);
         }
+
+        public function get_stok($id_menu)
+        {
+            $this->db->where('id_menu', $id_menu);
+            $stok = $this->db->get('data_menu')->result();
+
+            return $stok[0];
+        }
+
+        public function update_stok($id_menu, $stok)
+        {
+            $this->db->where('id_menu', $id_menu);
+            $this->db->update('data_menu', array('stok' => $stok));
+        }
+
+        public function get_riwayat_user($id_user)
+        {
+            $this->db->where('id_user', $id_user);
+            return $this->db->get('transaksi')->result();
+        }
+
+        public function get_transaksi_id($id_transaksi)
+        {
+            $this->db->where('transaksi.id_transaksi', $id_transaksi);
+            $this->db->from('transaksi');
+            $this->db->join('data_users', 'transaksi.id_user = data_users.id_user');
+            $transaksi = $this->db->get()->result();
+
+            return $transaksi[0];
+        }
+
+        public function get_detail_id($id_transaksi)
+        {
+            $this->db->where('transaksi_detail.id_transaksi', $id_transaksi);
+            $this->db->from('transaksi_detail');
+            $this->db->join('data_menu', 'transaksi_detail.id_menu = data_menu.id_menu');
+            return $this->db->get()->result();
+        }
     }
     
 
