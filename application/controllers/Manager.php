@@ -116,7 +116,7 @@
             $kode_reset = rand(10001, 99999);
 
             $this->m_resto->simpan_user($nama, $username, $role_id, $kode_reset);
-            echo "<script>alert('Kode password reset: ".$kode_reset."'); window.location.href='../data_user'</script>";
+            echo "<script>alert('Kode password reset: ".$kode_reset."'); window.location.href='../manager/data_user'</script>";
         }
 
         public function delete_user($id_user)
@@ -139,6 +139,37 @@
 
             $this->m_resto->simpan_edit_user($id_user, $data);
             redirect('manager/data_user');
+        }
+
+        public function histories_transaction()
+        {
+            $data['riwayat'] = $this->m_resto->get_all_riwayat();
+
+            $title['title'] = "Riwayat Transaksi";
+            $this->load->view('templates/header', $title);
+            $this->load->view('templates/navbar_manager');
+            $this->load->view('manager/history', $data);
+            $this->load->view('templates/footer');
+        }
+
+        public function print($id_transaksi)
+        {
+            $data['transaksi']          = $this->m_resto->get_transaksi_id($id_transaksi);
+            $data['transaksi_detail']   = $this->m_resto->get_detail_id($id_transaksi);
+
+            $this->load->view('templates/print_struk', $data);
+        }
+
+        public function report_sales()
+        {
+            $data['penjualan'] = $this->m_resto->jml_pembelian();
+            $data['stok'] = $this->m_resto->min_stok();
+
+            $title['title'] = "Laporan Penjualan";
+            $this->load->view('templates/header', $title);
+            $this->load->view('templates/navbar_manager');
+            $this->load->view('manager/laporan_penjualan', $data);
+            $this->load->view('templates/footer');
         }
     }
     

@@ -1,6 +1,6 @@
 <center><h1 class="mt-2 text-white">Data Users</h1></center>
 
-<button class="btn btn-outline-dark m-2" data-bs-target="#addUser" data-bs-toggle="modal">Tambah User</button>
+<button class="btn btn-outline-info m-2" data-bs-target="#addUser" data-bs-toggle="modal">Tambah User</button>
 
 <table class="table table-stripped table-hover text-white">
     <thead>

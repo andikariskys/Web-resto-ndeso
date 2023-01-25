@@ -16,10 +16,10 @@
                         <a href="<?= base_url('manager/data_user') ?>" class="nav-link">Data User</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Riwayat Transaksi</a>
+                        <a href="<?= base_url('manager/histories_transaction') ?>" class="nav-link">Riwayat Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Laporan Penjualan</a>
+                        <a href="<?= base_url('manager/report_sales') ?>" class="nav-link">Laporan Penjualan</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('login/logout') ?>" class="nav-link">Logout</a>

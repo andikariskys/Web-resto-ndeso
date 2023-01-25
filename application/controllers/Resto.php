@@ -124,7 +124,7 @@
             $data['transaksi']          = $this->m_resto->get_transaksi_id($id_transaksi);
             $data['transaksi_detail']   = $this->m_resto->get_detail_id($id_transaksi);
 
-            $this->load->view('transaksi/print_struk', $data);
+            $this->load->view('templates/print_struk', $data);
         }
     }
     

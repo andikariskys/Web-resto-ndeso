@@ -13,7 +13,7 @@
                         <a href="<?= base_url('admin') ?>" class="nav-link">Data Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Riwayat Transaksi</a>
+                        <a href="<?= base_url('admin/histories_transaction') ?>" class="nav-link">Riwayat Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('login/logout') ?>" class="nav-link">Logout</a>

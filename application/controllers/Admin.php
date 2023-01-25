@@ -118,6 +118,25 @@
             $this->m_resto->hapus_menu($id_menu);
             redirect('admin');
         }
+
+        public function histories_transaction()
+        {
+            $data['riwayat'] = $this->m_resto->get_all_riwayat();
+
+            $title['title'] = "Riwayat Transaksi";
+            $this->load->view('templates/header', $title);
+            $this->load->view('templates/navbar_kasir');
+            $this->load->view('admin/history', $data);
+            $this->load->view('templates/footer');
+        }
+
+        public function print($id_transaksi)
+        {
+            $data['transaksi']          = $this->m_resto->get_transaksi_id($id_transaksi);
+            $data['transaksi_detail']   = $this->m_resto->get_detail_id($id_transaksi);
+
+            $this->load->view('templates/print_struk', $data);
+        }
     }
 
 ?>

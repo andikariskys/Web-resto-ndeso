@@ -97,6 +97,12 @@
             return $this->db->get('data_users');
         }
 
+        public function simpan_pass_baru($id_user, $data_pass)
+        {
+            $this->db->where('id_user', $id_user);
+            $this->db->update('data_users', $data_pass);
+        }
+
         public function simpan_tr_detail($data)
         {
             $this->db->insert('transaksi_detail', $data);
@@ -143,6 +149,32 @@
             $this->db->from('transaksi_detail');
             $this->db->join('data_menu', 'transaksi_detail.id_menu = data_menu.id_menu');
             return $this->db->get()->result();
+        }
+
+        public function get_all_riwayat()
+        {
+            $this->db->from('transaksi');
+            $this->db->join('data_users', 'transaksi.id_user = data_users.id_user');
+            return $this->db->get()->result();
+        }
+
+        public function jml_pembelian()
+        {
+            $this->db->select('dm.nama_menu, sum(td.jml_menu) as jumlah');
+            $this->db->from('transaksi tr');
+            $this->db->join('transaksi_detail td', 'tr.id_transaksi = td.id_transaksi');
+            $this->db->join('data_menu dm', 'td.id_menu = dm.id_menu WHERE month(tgl_pesan) = month(now())');
+            $this->db->group_by('td.id_menu');
+            $this->db->order_by('jumlah', 'DESC');
+            $this->db->limit('5');
+            return $this->db->get()->result();
+        }
+
+        public function min_stok()
+        {
+            $this->db->limit('5');
+            $this->db->order_by('stok', 'ASC');
+            return $this->db->get('data_menu')->result();
         }
     }
     
