@@ -4,7 +4,13 @@
     {
         public function get_all_menu()
         {
+            $this->db->order_by('kategori', 'ASC');
             return $this->db->get('data_menu')->result();
+        }
+
+        function get_user($id_user){
+            $this->db->where('id_user', $id_user);
+            return $this->db->get('data_users')->result();
         }
 
         public function get_menu()

@@ -15,6 +15,8 @@
         public function index()
         {
             $title['title'] = "Dashboard";
+            $id_user = $this->session->userdata('data_sess');
+            $data['user'] = $this->m_resto->get_user($id_user['id_user']);
             $data['menu'] = $this->m_resto->get_menu();
             $this->load->view('templates/header', $title);
             $this->load->view('templates/navbar_kasir');

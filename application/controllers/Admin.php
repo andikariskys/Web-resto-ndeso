@@ -48,7 +48,7 @@
 
             $rand_id = rand(100001, 999999);
 
-            $id_menu        = "mn" + $rand_id;
+            $id_menu        = "mn".strval($rand_id);
             $nama_menu      = $this->input->post('nama_menu');
             $kategori       = $this->input->post('kategori');
             $stok           = $this->input->post('stok');
@@ -125,7 +125,7 @@
 
             $title['title'] = "Riwayat Transaksi";
             $this->load->view('templates/header', $title);
-            $this->load->view('templates/navbar_kasir');
+            $this->load->view('templates/navbar_admin');
             $this->load->view('admin/history', $data);
             $this->load->view('templates/footer');
         }
