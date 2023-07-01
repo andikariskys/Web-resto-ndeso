@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 25, 2023 at 04:01 AM
+-- Generation Time: Jul 01, 2023 at 12:21 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `resto_ndeso`
 --
+
+CREATE DATABASE `resto_ndeso`;
+USE `resto_ndeso`;
 
 -- --------------------------------------------------------
 
@@ -43,8 +46,18 @@ CREATE TABLE `data_menu` (
 
 INSERT INTO `data_menu` (`id_menu`, `nama_menu`, `kategori`, `stok`, `harga_satuan`, `gambar`, `status`) VALUES
 ('mn121213', 'Steak Ikan', 'Makanan', 5, 15000, 'steak_ikan.jpg', 'tampil'),
+('mn185870', 'Mie Dok Dok', 'Makanan', 12, 13000, 'photo.jpg', 'tampil'),
 ('mn232425', 'Dim Sum', 'Snack', 4, 10000, 'dim_sum.jpg', 'tampil'),
-('mn343536', 'Jus Alpukat', 'Minuman', 6, 7000, 'jus_alpukat.jpg', 'tampil');
+('mn260651', 'Roti Bakar', 'Snack', 20, 8000, 'Mau-Tahu-Cara-Membuat-Roti-Bakar-Ala-Cafe-Termudah-2.jpg', 'tampil'),
+('mn343536', 'Jus Alpukat', 'Minuman', 6, 7000, 'jus_alpukat.jpg', 'tampil'),
+('mn373862', 'Coffee Dalgona', 'Minuman', 15, 7000, '5e7eb044aa9a2.jpg', 'tampil'),
+('mn391780', 'Pancake', 'Snack', 9, 5000, 'fluffyamericanpancak_74828_16x9.jpg', 'tampil'),
+('mn430203', 'Nasi Goreng Gila', 'Makanan', 12, 13000, 'nasi-goreng-sosis-featured.jpg', 'tampil'),
+('mn476681', 'Es Buah ', 'Minuman', 15, 7000, 'Daftar-Resep-Es-Buah-yang-Mudah-dan-Enak-1024x683.jpg', 'tampil'),
+('mn519727', 'Kentang Goreng', 'Snack', 9, 9000, 'resep-kentang-goreng-crispy-ala-mcd-sederhana.jpg', 'tampil'),
+('mn534241', 'Es Cream', 'Minuman', 15, 6000, '1-1-Shiroukuma-Cafe-by-cafe_shirokuma.jpg', 'tampil'),
+('mn852780', 'Nasi Lele Bakar', 'Makanan', 13, 10000, 'lele_bakar.jpg', 'tampil'),
+('mn952730', 'Risol Mayonaies', 'Snack', 17, 6000, 'risol-mayo.jpg', 'tampil');
 
 -- --------------------------------------------------------
 
