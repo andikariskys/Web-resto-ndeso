@@ -82,6 +82,10 @@
         
         public function delete_menu($id_menu)
         {
+            $nama_gambar = $this->m_resto->get_image_name($id_menu);
+            // var_dump($nama_gambar);
+            $path_image = FCPATH."/assets/images/".$nama_gambar;
+            unlink($path_image);
             $this->m_resto->hapus_menu($id_menu);
             redirect('manager');
         }

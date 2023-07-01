@@ -5,6 +5,7 @@
         public function get_all_menu()
         {
             $this->db->order_by('kategori', 'ASC');
+            $this->db->order_by('nama_menu', 'ASC');
             return $this->db->get('data_menu')->result();
         }
 
@@ -16,6 +17,7 @@
         public function get_menu()
         {
             $this->db->where('status', 'tampil');
+            $this->db->order_by('nama_menu', 'ASC');
             return $this->db->get('data_menu')->result();
         }
 
@@ -35,6 +37,13 @@
         {
             $this->db->where('id_menu', $id_menu);
             $this->db->update('data_menu', $data_edit);
+        }
+
+        function get_image_name($id_menu) {
+            $this->db->select('gambar');
+            $this->db->where('id_menu', $id_menu);
+            $data_menu = $this->db->get('data_menu')->result();
+            return $data_menu[0]->gambar;
         }
 
         public function hapus_menu($id_menu)
@@ -183,6 +192,3 @@
             return $this->db->get('data_menu')->result();
         }
     }
-    
-
-?>
