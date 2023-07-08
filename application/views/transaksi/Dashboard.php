@@ -24,7 +24,7 @@
         foreach ($menu as $mn) :
             if ($mn->kategori == "Makanan") { ?>
                 <div class="card m-2" style="width: 16rem; height: 23rem; max-width: 45%;">
-                    <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                    <img class="card-image-top mt-3" style="background-image: url(<?= base_url() ?>/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
                     <div class="card-body">
                         <h5 class="card-title"><?= $mn->nama_menu ?></h5>
                         <p class="card-text">
@@ -60,7 +60,7 @@
         foreach ($menu as $mn) :
             if ($mn->kategori == "Minuman") { ?>
                 <div class="card m-2" style="width: 16rem; height: 23rem; max-width: 45%;">
-                    <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                    <img class="card-image-top mt-3" style="background-image: url(<?= base_url() ?>/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
                     <div class="card-body">
                         <h5 class="card-title"><?= $mn->nama_menu ?></h5>
                         <p class="card-text">
@@ -96,7 +96,7 @@
         foreach ($menu as $mn) :
             if ($mn->kategori == "Snack") { ?>
                 <div class="card m-2" style="width: 16rem; height: 23rem; max-width: 45%;">
-                    <img class="card-image-top mt-3" style="background-image: url(/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
+                    <img class="card-image-top mt-3" style="background-image: url(<?= base_url() ?>/assets/images/<?= $mn->gambar ?>); height: 100%; background-size: cover; background-position: center;"></img>
                     <div class="card-body">
                         <h5 class="card-title"><?= $mn->nama_menu ?></h5>
                         <p class="card-text">
