@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://my-project.andikariskys.my.id/resto_ndeso/';
+$config['base_url'] = 'https://resto_ndeso.test/';
 
 /*
 |--------------------------------------------------------------------------
