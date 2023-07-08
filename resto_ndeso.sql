@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `resto_ndeso`
 --
 
-CREATE DATABASE IF NOT EXISTS `resto_ndeso`;
+CREATE DATABASE `resto_ndeso`;
 USE `resto_ndeso`;
 
 -- --------------------------------------------------------
@@ -29,7 +29,6 @@ USE `resto_ndeso`;
 --
 -- Table structure for table `data_menu`
 --
-DROP TABLE IF EXISTS `data_menu`;
 
 CREATE TABLE `data_menu` (
   `id_menu` varchar(11) NOT NULL,
@@ -66,8 +65,6 @@ INSERT INTO `data_menu` (`id_menu`, `nama_menu`, `kategori`, `stok`, `harga_satu
 -- Table structure for table `data_users`
 --
 
-DROP TABLE IF EXISTS `data_users`;
-
 CREATE TABLE `data_users` (
   `id_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `username` varchar(35) NOT NULL,
@@ -93,8 +90,6 @@ INSERT INTO `data_users` (`id_user`, `username`, `password`, `nama`, `role_id`, 
 -- Table structure for table `transaksi`
 --
 
-DROP TABLE IF EXISTS `transaksi`;
-
 CREATE TABLE `transaksi` (
   `id_transaksi` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `id_user` varchar(50) DEFAULT NULL,
@@ -117,8 +112,6 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `nama_pembeli`, `tgl_pesan`,
 --
 -- Table structure for table `transaksi_detail`
 --
-
-DROP TABLE IF EXISTS `transaksi_detail`;
 
 CREATE TABLE `transaksi_detail` (
   `id_detail` int NOT NULL,
